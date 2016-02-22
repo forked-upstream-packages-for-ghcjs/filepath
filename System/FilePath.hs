@@ -20,7 +20,10 @@ functions.
 -}
 
 
-#if defined(mingw32_HOST_OS) || defined(__MINGW32__)
+#if defined(ghcjs_HOST_OS)
+module System.FilePath (module System.FilePath.Current) where
+import System.FilePath.Current
+#elif defined(mingw32_HOST_OS) || defined(__MINGW32__)
 module System.FilePath(module System.FilePath.Windows) where
 import System.FilePath.Windows
 #else

@@ -40,6 +40,9 @@ library
         System.FilePath
         System.FilePath.Posix
         System.FilePath.Windows
+    if impl(GHCJS>=0.1)
+        Exposed-modules:
+            System.FilePath.Current
 
     build-depends:
         base >= 4 && < 4.9
